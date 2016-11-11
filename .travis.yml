@@ -3,18 +3,17 @@ sudo: true
 cache:
   directories:
   - node_modules
-node_js: stable
+node_js: 4.4.3
 script:
   - npm run lint
-  - npm run codecov
 deploy:
   provider: cloudfoundry
   api: https://api.ng.bluemix.net
   username: $CF_USERNAME
   password: $CF_PASSWORD
-  name: conversation-simple
+  name: car-dashboard
   organization: WatsonPlatformServices
   space: demos
   on:
-    repo: watson-developer-cloud/conversation-simple
+    repo: watson-developer-cloud/car-dashboard
     branch: release

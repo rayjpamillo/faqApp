@@ -4,3 +4,5 @@ temp/
 .idea/
 coverage
 npm-debug.log
+.idea/
+dist/
