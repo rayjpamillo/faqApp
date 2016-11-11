@@ -47,7 +47,7 @@
             .pipe(assets) //node_modules dir is in the current dir, search there for dependencies!
             .pipe($.sourcemaps.init({ 'identityMap': true, 'debug': true }))
             .pipe($.useref())
-            // TODO re-add with caching 
+            // TODO re-add with caching
             //.pipe(sourcemaps.write('./maps'))
             // Commenting out lines that don't work with latest version of Node
             // .pipe($.if('*.js', $.if('**/dashboard.min.js', $.uglify({mangle: false, preserveComments: 'license'}), $.uglify())))
@@ -81,5 +81,12 @@
 
     gulp.task('server:watch', ['build-html', 'server:start', 'watch']);
 
-    gulp.task('default', ['build-html']);
+    gulp.task('default', ['build-html'], function(){
+      return $.nodemon({
+        script: 'server.js',
+        ignore: ['ui', 'gulpfile.js', '.idea']
+      }).on('restart', function () {
+        console.log('server restarted!');
+      });
+    });
 }());
