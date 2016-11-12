@@ -28,14 +28,10 @@ var Sidebar = (function() {
   };
 
   var suggestions = [
-    'Turn on the headlights',
-    'Shut off my lights',
-    'Play some music',
-    'When will the rain end?',
-    'What’s my ETA?',
-    'Show me what’s nearby',
-    'Find a gas station',
-    'Turn my radio up'
+    'Where\'s the comfort room?',
+    'Tell me about this company.',
+    'See you again!',
+    'How are you?'
   ];
 
 
